@@ -11,7 +11,7 @@ export default function Temperature({weather: {
       </div>
       <div className="temp-num">
         <img src={iconUrlFromCode(icon)} alt="" />
-        <p className="temp-value">{temp} &#8451;</p>
+        <p className="temp-value">{parseInt(temp)} &#8451;</p>
       </div>
     </div>
   );

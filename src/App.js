@@ -8,11 +8,11 @@ import { useEffect, useState } from "react";
 function App() {
   const [query, setQuery] = useState({ q: "london" });
   const [weather, setWeather] = useState(null);
-  const unit = "metric";
+  const units = "metric";
 
   useEffect(() => {
     const fetchWeather = async () => {
-      await getFormattedWeatherData({ ...query, unit }).then((data) => {
+      await getFormattedWeatherData({ ...query, units }).then((data) => {
         setWeather(data);
       });
     };

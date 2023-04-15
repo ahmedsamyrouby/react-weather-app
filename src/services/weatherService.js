@@ -1,6 +1,8 @@
 import { DateTime } from "luxon";
 
-const API_KEY = "daff1f316bf1311be24024704c6d3a35";
+// a4dfcfa9a4b405c21a85c83d6c11a99e
+
+const API_KEY = "a4dfcfa9a4b405c21a85c83d6c11a99e";
 const BASE_URL = "https://api.openweathermap.org/data/2.5";
 
 const getWeatherData = (infoType, searchParams) => {
@@ -12,22 +14,33 @@ const getWeatherData = (infoType, searchParams) => {
 
 const formatCurrentWeather = (data) => {
   const {
-    main: temp,
+    coord: { lat, lon },
+    main: { temp, feels_like, temp_min, temp_max, humidity },
     name,
     dt,
-    sys: country,
-    weather
+    sys: { country, sunrise, sunset },
+    weather,
+    wind: { speed },
   } = data;
 
   const { main: details, icon } = weather[0];
 
   return {
+    lat,
+    lon,
     temp,
+    feels_like,
+    temp_min,
+    temp_max,
+    humidity,
     name,
     dt,
     country,
+    sunrise,
+    sunset,
     details,
-    icon
+    icon,
+    speed,
   };
 };
 
