@@ -1,6 +1,9 @@
+*{
+  margin-top: 0;
+}
 .App {
   text-align: center;
-  width: max(340px, 50%);
+  width: max(340px, 30%);
   margin: 50px auto;
   background-color: #617a8d;
   border-radius: 15px;

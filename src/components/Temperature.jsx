@@ -1,14 +1,17 @@
+import { iconUrlFromCode } from '../services/weatherService';
 import '../styles/Temperature.css'
 
-export default function Temperature(){
+export default function Temperature({weather: {
+  details, icon, temp
+}}){
   return(
     <div>
       <div className="temp-status">
-        <p>Rain</p>
+        <p>{details}</p>
       </div>
       <div className="temp-num">
-        <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="" />
-        <p className="temp-value">34 &#8451;</p>
+        <img src={iconUrlFromCode(icon)} alt="" />
+        <p className="temp-value">{temp} &#8451;</p>
       </div>
     </div>
   );
